@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Portal</title>
+    <style>
+        .main{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #btn{
+            width: 150px;
+            height: 40px;
+            font-size: 16px;
+            background-color: aquamarine;
+            border-radius: 8px;
+            font-weight: bold;
+            margin:50px 40%;
+
+        }
+        .name{
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+        }
+        input{
+            height: 20px;
+            padding:5px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+        .footer {
+            height: 60px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 255);
+            text-align: center;
+            padding-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .container{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body style="background-image: url(static/Background_IMG.jpg); width: 100vw;height: 100vh;">
+<div class="container">    
+    <header>
+        <h1 style="text-align: center;">Weather Portal</h1>
+    </header>
+    <main>
+        <section id="location">
+            <form id="weather-form" action="/weather" method="post">
+                <div class="main">
+                    <label for="city" class="name">City:</label>
+                    <input type="text" id="city" name="city" placeholder="E.g., New York" required>
+                    <label for="state" class="name">State:</label>
+                    <input type="text" id="state" name="state" placeholder="E.g., NY">
+                    <label for="country" class="name">Country:</label>
+                    <input type="text" id="country" name="country" placeholder="E.g., US" required value="India">
+                    
+                </div>
+                <button type="submit" id='btn'">Get Weather</button>
+            </form>
+        </section>
+        <section id="weather-info">
+            <!-- Weather information will be displayed here -->
+        </section>
+    </main>
+</div>
+<footer class="footer">
+    &copy; 2023 Weather Portal
+</footer>
+</body>
+</html>

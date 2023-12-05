@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Information</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('static/Background_IMG.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            color: black;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #icon-container {
+            text-align: center;
+        }
+
+        #icon {
+            width: 150px; /* Larger icon */
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        #icon img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box1 {
+            font-size: 20px;
+            color: black; /* Dark font color */
+            margin: 5px 0;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #808080; /* Grey background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 200px; /* Adjust the width as needed */
+            margin: 10px;
+        }
+
+        .humidity {
+            background-color: #FFD700; /* Yellow background for humidity */
+        }
+
+        .visibility {
+            background-color: #87CEEB; /* Light blue background for visibility */
+        }
+
+        .windspeed {
+            background-color: #98FB98; /* Light green background for wind speed */
+        }
+
+        .footer {
+            height: 60px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Weather Information</h1>
+    </header>
+    <div class="main">
+        <div id="icon-container">
+            <div id="icon">
+                <img src="http://openweathermap.org/img/w/{{ weather_icon }}.png" alt="Weather Icon">
+            </div>
+            <div class="box1">
+                {{ temperature }}°C
+            </div>
+        </div>
+        <div class="box1">
+            {{ weather_main }} - {{ weather_description }}
+        </div>
+        <div class="details">
+            <div class="box humidity">
+                <div class="box1">Humidity</div>
+                <div class="box1">{{ humidity }}%</div>
+            </div>
+            <div class="box visibility">
+                <div class="box1">Visibility</div>
+                <div class="box1">{{ visibility }} km</div>
+            </div>
+            <div class="box windspeed">
+                <div class="box1">Wind Speed</div>
+                <div class="box1">{{ wind_speed }} m/s</div>
+            </div>
+            <div class="box sunrise">
+                <div class="box1">Sunrise</div>
+                <div class="box1">{{ sunrise }}</div>
+            </div>
+            <div class="box sunset">
+                <div class="box1">Sunset</div>
+                <div class="box1">{{ sunset }}</div>
+            </div>
+            <div class="box feels-like">
+                <div class="box1">Feels Like</div>
+                <div class="box1">{{ feels_like }}°C</div>
+            </div>
+            <div class="box max-temp">
+                <div class="box1">Max Temperature</div>
+                <div class="box1">{{ max_temp }}°C</div>
+            </div>
+            <div class="box min-temp">
+                <div class="box1">Min Temperature</div>
+                <div class="box1">{{ min_temp }}°C</div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2023 Weather Portal</p>
+    </footer>
+</body>
+</html>
